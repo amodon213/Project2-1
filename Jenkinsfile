@@ -12,6 +12,8 @@ pipeline {
         stage('run backend server ') {
             steps {
                 script {
+                    pip install selenium
+                    pip install pymysql
                     sh 'nohup python rest_app.py &'
 
                 }
