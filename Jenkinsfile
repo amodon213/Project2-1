@@ -12,7 +12,7 @@ pipeline {
         stage('run rest app server ') {
             steps {
                 script {
-                    sh ' python rest_app.py '
+                    sh 'nohup python rest_app.py &'
 
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
         stage('run web app server') {
             steps {
                 script {
-                    sh ' python web_app.py '
+                    sh 'nohup python web_app.py &'
 
                 }
             }
