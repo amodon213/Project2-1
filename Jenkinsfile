@@ -12,8 +12,6 @@ pipeline {
         stage('run backend server ') {
             steps {
                 script {
-                    sh 'pip install selenium'
-                    sh 'pip install pymysql'
                     sh 'nohup python rest_app.py &'
 
                 }
@@ -30,7 +28,7 @@ pipeline {
         stage('run backend testing') {
             steps {
                 script {
-                    sh 'nohup python backend_testing.py &'
+                    sh 'python backend_testing.py'
 
                 }
             }
@@ -38,7 +36,7 @@ pipeline {
         stage('run frontend testing') {
             steps {
                 script {
-                    sh 'nohup python frontend_testing.py &'
+                    sh 'python frontend_testing.py'
 
                 }
             }
@@ -46,7 +44,7 @@ pipeline {
         stage('run combined testing') {
             steps {
                 script {
-                    sh 'nohup python combined_testing.py &'
+                    sh 'python combined_testing.py'
 
                 }
             }
