@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
 
-                    sh 'nohup python db_connector.py &'
+                    sh 'python db_connector.py'
 
                 }
             }
