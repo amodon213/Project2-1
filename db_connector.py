@@ -60,7 +60,6 @@ def get_user_id(user_id):
 
 #get users table
 def get_table():
-    print(db_table)
     conn, cursor = get_con()
     cursor.execute(f"SELECT * FROM {db_table}.users;")
     result = cursor.fetchall()
@@ -77,7 +76,6 @@ def get_all_users_ids():
     return result
 
 
-get_table()
 
 
 
