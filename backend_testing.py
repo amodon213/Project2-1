@@ -1,7 +1,7 @@
 import requests
 from db_connector import *
 
-try:
+#try:
     #Post new user data to DB
     res = requests.post('http://127.0.0.1:5000/users/6666', json={"user_name": "Dvir"})
 
@@ -18,5 +18,5 @@ try:
     print(check_insert.json())
     for i in table:
         print(i)
-except:
-    print("test failed")
+#except:
+#    print("test failed")
