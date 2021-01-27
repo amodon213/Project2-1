@@ -63,8 +63,9 @@ def user(user_id):
 @app.route('/stop_server')
 def stop_server():
     try:
-        os.kill(os.getpid(), signal.CTRL_C_EVENT)
-        return 'Server stopped',200
+        os.kill(os.getpid(), signal.SIGINT)
+        return 'Server stopped', 200
+
     except:
         return {'status': 'error', 'reason': "didn't manage to close rest app'"}, 500
 
