@@ -28,6 +28,7 @@ pipeline {
         stage('run backend testing') {
             steps {
                 script {
+                    sh 'pip install requests'
                     sh 'python backend_testing.py'
 
                 }
