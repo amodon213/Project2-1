@@ -12,6 +12,9 @@ pipeline {
         stage('run backend server ') {
             steps {
                 script {
+                    sh 'pip install python-dotenv'
+                    sh 'pip install requests'
+                     sh 'pip install flask'
                     sh 'nohup python rest_app.py &'
 
                 }
