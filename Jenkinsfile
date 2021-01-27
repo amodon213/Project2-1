@@ -9,18 +9,15 @@ pipeline {
                 git 'https://github.com/keidar/Project2.git'
             }
         }
-        stage('run backend server ') {
+        stage('run rest app server ') {
             steps {
                 script {
-                    sh 'pip install python-dotenv'
-                    sh 'pip install requests'
-                     sh 'pip install flask'
                     sh 'nohup python rest_app.py &'
 
                 }
             }
         }
-        stage('run backend server') {
+        stage('run web app server') {
             steps {
                 script {
                     sh 'nohup python web_app.py &'
@@ -55,7 +52,7 @@ pipeline {
         stage('run clean environmant ') {
             steps {
                 script {
-                    sh 'nohup python clean_environment.py &'
+                    sh ' python clean_environment.py'
 
                 }
             }
