@@ -14,7 +14,6 @@ pipeline {
                 script {
                     sh 'pip install datetime'
                     sh 'pip install numpy'
-                    sh 'pip install os'
                     sh 'pip install flask'
                     sh 'pip install signal'
                     sh 'nohup python rest_app.py &'
