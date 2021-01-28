@@ -13,7 +13,15 @@ pipeline {
             steps {
                 script {
 
-                    sh 'python db_connector.py'
+                    sh 'python rest_app.py'
+
+                }
+            }
+        }
+        stage('run clean environmant ') {
+            steps {
+                script {
+                    sh ' python clean_environment.py'
 
                 }
             }
