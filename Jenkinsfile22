@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
 
-                    sh 'python rest_app.py'
+                    sh 'nohup python rest_app.py &'
 
                 }
             }
