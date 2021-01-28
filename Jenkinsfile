@@ -17,11 +17,34 @@ pipeline {
                 }
             }
         }
- 
+        stage('run web app server') {
+            steps {
+                script {
+                    sh 'nohup python web_app.py &'
+
+                }
+            }
+        }
         stage('run backend testing') {
             steps {
                 script {
                     sh 'python backend_testing.py'
+
+                }
+            }
+        }
+        stage('run frontend testing') {
+            steps {
+                script {
+                    sh 'python frontend_testing.py'
+
+                }
+            }
+        }
+        stage('run combined testing') {
+            steps {
+                script {
+                    sh 'python combined_testing.py'
 
                 }
             }
