@@ -12,10 +12,6 @@ pipeline {
         stage('run rest app server ') {
             steps {
                 script {
-                    sh 'sudo -H pip install datetime'
-                    sh 'sudo -H pip install numpy'
-                    sh 'sudo -H pip install flask'
-                    sh 'sudo -H pip install signal'
                     sh 'nohup python rest_app.py &'
 
                 }
