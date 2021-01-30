@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
 
-                    sh 'nohup python rest_app.py &'
+                    sh 'python rest_app.py'
 
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('run clean environmant ') {
             steps {
                 script {
-                    sh ' python clean_environment.py'
+                    sh 'python clean_environment.py'
 
 
                 }
