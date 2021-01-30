@@ -12,7 +12,16 @@ pipeline {
         stage('run backend server ') {
             steps {
                 script {
-
+import os
+import signal
+from datetime import datetime
+from flask import Flask, request
+from db_connector import *
+from numpy import random
+                    sh ' sudo -H pip install signal'
+                    sh ' sudo -H pip install os'
+                    sh ' sudo -H pip install flask'
+                    sh ' sudo -H pip install numpy'
                     sh 'python rest_app.py'
 
                 }
