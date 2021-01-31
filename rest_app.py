@@ -1,5 +1,3 @@
-import os
-import signal
 from datetime import datetime
 from flask import Flask, request
 from db_connector import *
@@ -9,17 +7,11 @@ app = Flask(__name__)
 
 
 # supported methods
-
 @app.route('/users/<user_id>', methods=['GET', 'POST', 'DELETE', 'PUT'])
 def user(user_id):
-    print(request.method)
     if request.method == 'GET':
-        print("entering GET func")
         try:
-            
             name = get_user_id(user_id)
-            print(name)
- #           name = mysql_db("select", user_id)
             return {'status': 'ok', 'user name': name}, 200
         except:
             return {'status': 'error', 'reason': "no such id"}, 500  # status code
@@ -64,14 +56,6 @@ def user(user_id):
         except:
             return {'status': 'error', 'reason': "no such id"}, 500
 
-@app.route('/stop_server')
-def stop_server():
-    try:
-        os.kill(os.getpid(), signal.SIGINT)
-        return 'Server stopped', 200
-
-    except:
-        return {'status': 'error', 'reason': "didn't manage to close rest app'"}, 500
 
 @app.route('/check')
 def check():
