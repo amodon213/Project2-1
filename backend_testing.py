@@ -14,6 +14,7 @@ table=json.loads(table)
 
 
 #print results
+print(res)
 print(res.json())
 print(check_insert.json())
 for i in table:
