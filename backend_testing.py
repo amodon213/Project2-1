@@ -15,6 +15,7 @@ check_insert = requests.get('http://127.0.0.1:5000/users/6666')
 
 print("check method backend",test.text)
 print(type(test))
+print("test: ",test)
 print(test.json())
 print("backend tesing",check_insert)
 
