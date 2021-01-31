@@ -28,7 +28,7 @@ pipeline {
         stage('run backend testing') {
             steps {
                 script {
-                    sh 'python backend_testing.py'
+                    sh 'python combined_testing.py'
 
                 }
             }
@@ -44,7 +44,7 @@ pipeline {
         stage('run combined testing') {
             steps {
                 script {
-                    sh 'python combined_testing.py'
+                    sh 'python backend_testing.py'
 
                 }
             }
