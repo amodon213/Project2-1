@@ -77,7 +77,8 @@ def stop_server():
 def check():
     print("check")
     test = request.method
-    return test ,200
+    json = {'jsonfile':'test'}
+    return json ,200
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
