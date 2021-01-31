@@ -76,8 +76,8 @@ def stop_server():
 @app.route('/check')
 def check():
     print("check")
-    print(request.method)
-    return "check return" ,200
+    test = request.method
+    return test ,200
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
