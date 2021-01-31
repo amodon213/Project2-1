@@ -14,7 +14,9 @@ app = Flask(__name__)
 def user(user_id):
     if request.method == 'GET':
         try:
+            
             name = get_user_id(user_id)
+            print(name)
  #           name = mysql_db("select", user_id)
             return {'status': 'ok', 'user name': name}, 200
         except:
