@@ -7,17 +7,20 @@ from db_connector import *
 # res = requests.post('http://0.0.0.0:5000/users/6666', json={"user_name": "Dvir"})
 #submit that new user inserted to DB
 #check_insert = requests.get('http://127.0.0.1:5000/users/6666')
-requests.get('http://0.0.0.0:5000/check')
+res = requests.get('http://0.0.0.0:5000/check')
 #check_insert = requests.get('http://0.0.0.0:5000/users/8888')
 #show all stored data on DB table
 table = get_table()
 table=json.loads(table)
 
+print(res.json)
+print(table)
+
 
 #print results
 # print(res.json())
-print(check_insert.json())
-for i in table:
-    print(i)
+# print(check_insert.json())
+# for i in table:
+#     print(i)
 # except:
 #     print("test failed")
