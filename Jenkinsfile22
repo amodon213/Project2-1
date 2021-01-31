@@ -13,9 +13,9 @@ pipeline {
             steps {
                 script {
                     sh 'sudo -H pip install signal'
-                    sh ' sudo -H pip install os'
-                    sh ' sudo -H pip install flask'
-                    sh ' sudo -H pip install numpy'
+                    sh 'sudo -H pip install os'
+                    sh 'sudo -H pip install flask'
+                    sh 'sudo -H pip install numpy'
                     sh 'python rest_app.py'
 
                 }
