@@ -12,8 +12,8 @@ pipeline {
         stage('run backend server ') {
             steps {
                 script {
-                    sh 'sudo -H pip install flask'
-                    sh 'python rest_app.py'
+                    sh 'sudo -H pip install signal'
+                    sh 'nohup python rest_app.py &'
 
                 }
             }
