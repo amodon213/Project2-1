@@ -12,7 +12,7 @@ check_insert = requests.get('http://127.0.0.1:5000/users/6666')
 # table = get_table()
 # table=json.loads(table)
 
-print(check_insert)
+print("backend tesing",check_insert)
 
 #print results
 # print(res.json())
