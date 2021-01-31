@@ -70,5 +70,10 @@ def stop_server():
     except:
         return {'status': 'error', 'reason': "didn't manage to close rest app'"}, 500
 
+@app.route('/check')
+def check():
+    print("check")
+    return "check return" ,200
+
 
 app.run(host='0.0.0.0', debug=True, port=5000)
