@@ -12,7 +12,9 @@ app = Flask(__name__)
 
 @app.route('/users/<user_id>', methods=['GET', 'POST', 'DELETE', 'PUT'])
 def user(user_id):
+    print(request.method)
     if request.method == 'GET':
+        print("entering GET func")
         try:
             
             name = get_user_id(user_id)
