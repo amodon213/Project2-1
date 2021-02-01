@@ -20,6 +20,7 @@ pipeline {
         stage('run web app server') {
             steps {
                 script {
+                    sh 'pip insstall flask'
                     sh 'pip show flask'
                     sh 'nohup python rest_app.py &'
 
