@@ -61,8 +61,7 @@ def user(user_id):
 def check():
     print("check")
     test = request.method
-    json = {'jsonfile':'test'}
-    return json ,200
+    return "check" ,200
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
