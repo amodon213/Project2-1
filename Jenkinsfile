@@ -12,8 +12,7 @@ pipeline {
         stage('run rest app server ') {
             steps {
                 script {
-                    sh 'sudo -H pip install flask'
-                    sh 'nohup python web_app.py &'
+                    sh 'nohup python rest_app.py &'
 
                 }
             }
@@ -21,7 +20,7 @@ pipeline {
         stage('run web app server') {
             steps {
                 script {
-                    sh 'nohup python rest_app.py &'
+                    sh 'nohup python web_app.py &'
 
                 }
             }
