@@ -50,8 +50,6 @@ def user(user_id):
         try:
             get_user_id(user_id)
             delete_user(user_id)
-            # mysql_db("select", user_id)
-            # mysql_db("delete", user_id)
             return {'status': 'ok', 'user_deleted': user_id}, 200  # status code
         except:
             return {'status': 'error', 'reason': "no such id"}, 500
