@@ -29,7 +29,7 @@ pipeline {
         stage('run backend testing') {
             steps {
                 script {
-                    sh 'python frontend_testing.py'
+                    sh 'python backend_testing.py'
 
                 }
             }
@@ -37,7 +37,7 @@ pipeline {
         stage('run frontend testing') {
             steps {
                 script {
-                    sh 'python backend_testing.py'
+                    sh 'python frontend_testing.py'
 
                 }
             }
