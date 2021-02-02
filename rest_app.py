@@ -61,6 +61,8 @@ def stop_server():
     try:
         os.kill(os.getpid(), signal.SIGINT)
         return 'Server stopped', 200
+    except:
+            return "Failed to stop server", 500
 
 
 app.run(host='127.0.0.1', debug=True, port=5000)
