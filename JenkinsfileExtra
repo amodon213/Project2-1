@@ -29,9 +29,9 @@ pipeline {
         stage('Choice') {
             steps {
                 script {
-                    if ${ScriptChoice} == '1'{
+                    if $ScriptChoice == '1'{
                         sh 'python frontend_testing.py'
-                    }elif ${ScriptChoice} == '2'{
+                    }elif $ScriptChoice == '2'{
                         sh 'python backend_testing.py'
                     }else{
                         sh 'python combined_testing.py'
