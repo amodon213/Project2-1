@@ -25,30 +25,21 @@ pipeline {
                 }
             }
         }
-        stage('run backend testing') {
+
+        stage('Choice') {
             steps {
                 script {
-                    sh 'python backend_testing.py'
-
+                    if ${ScriptChoice} == '1'{
+                        sh 'python frontend_testing.py'
+                    }elif ${ScriptChoice} == '2'{
+                        sh 'python backend_testing.py'
+                    }else{
+                        sh 'python combined_testing.py'
+                   }
                 }
             }
         }
-        stage('run frontend testing') {
-            steps {
-                script {
-                    sh 'python frontend_testing.py'
 
-                }
-            }
-        }
-        stage('run combined testing') {
-            steps {
-                script {
-                    sh 'python combined_testing.py'
-
-                }
-            }
-        }
         stage('run clean environmant ') {
             steps {
                 script {
