@@ -1,5 +1,7 @@
 pipeline {
     agent any
+    parameters { 
+        choice(name: 'Script_Choice', choices: ['1', '2', '3','4'], description: '',defaultValue: '3') }
     stages {
         stage('Pull Code') {
             steps {
