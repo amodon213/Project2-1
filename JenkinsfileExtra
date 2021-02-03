@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters { 
-        choice(name: 'Script_Choice', choices: ['3', '2', '1'], description: '') }
+        choice(name: 'Script_Choice', choices: ['3', '2', '1'], description: '1 - Frontend \n 2 - Backend \n 3 - Combined') }
     stages {
         stage('Pull Code') {
             steps {
