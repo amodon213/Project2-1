@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters { 
-        choice(name: 'Script_Choice', choices: ['1', '2', '3','4'], description: '',defaultValue: '3') }
+        choice(name: 'Script_Choice', choices: ['1', '2', '3'], description: '') }
     stages {
         stage('Pull Code') {
             steps {
@@ -31,9 +31,9 @@ pipeline {
         stage('Choice') {
             steps {
                 script {
-                    if (parm.Script_Choice == '1'){
+                    if (params.Script_Choice == '1'){
                         sh 'python frontend_testing.py'
-                    }elif (parm.Script_Choice == '2'){
+                    }else if (params.Script_Choice == '2'){
                         sh 'python backend_testing.py'
                     }else{
                         sh 'python combined_testing.py'
